@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <math.h>
+
+
 void main ()
 {
-
 	float x1, y1, r1, x2, y2, r2, d;
-
 	scanf("%lf%lf%lf", &x1, &y1, &r1);
-
 	scanf("%lf%lf%lf", &x2, &y2, &r2);
-
 	scanf("%lf", &d);
 
 	if ((r1 == r2) && (x1 == x2) && (y1 == y2))
