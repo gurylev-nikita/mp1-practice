@@ -36,10 +36,4 @@ void main()
         printf("The circle is in the circle");
         return;
     }
-
-    if ((r1 < 0) || (r2 < 0))
-    {
-        printf("Circles do not exist");
-        return;
-    }
 }
