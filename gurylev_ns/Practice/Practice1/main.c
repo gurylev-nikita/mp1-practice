@@ -20,7 +20,7 @@ void main ()
 	printf("Введите плотность материала ДРЕВЕСИНА (кг/м^3)\n");
 	scanf("%f", &wood);
 
-	setlocale (LC_CTYPE,"rus");
+	setlocale(LC_CTYPE,"rus");
 	printf("Высота шкафа (от 1.8 до 2.2 (м))");
 	scanf("%f", &h);
 	if ((h < 1.8) || (h > 2.2))
