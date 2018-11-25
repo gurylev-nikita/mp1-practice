@@ -1,63 +1,41 @@
 #include <stdio.h>
-#include <locale.h>
+#include <math.h>
 
 void main()
 {
-	float w, d, h, m1, m2, m3, m4, m5, m, n;
-	float tdvp, tdsp, twood, dvp, dsp, wood; //Плотность и толщина
+    float x1, y1, r1, x2, y2, r2, d;
+    scanf("%f%f%f", &x1, &y1, &r1);
+    scanf("%f%f%f", &x2, &y2, &r2);
+    scanf("%f", &d);
 
+    if ((r1 == r2) && (x1 == x2) && (y1 == y2))
+    {
+        printf("Circles match");
+        return;
+    }
+    if (d == (r1 + r2))
+    {
+        printf("Circles intersect at one point");
+        return;
+    }
 
-	tdvp = 0.005;
-	tdsp = 0.015;
-	twood = 0.001;
+    if (d > r1 + r2)
+    {
+        printf("Circles do not intersect");
+        return;
+    }
 
-	printf("Введите плотность материала ДВП (кг/м^3)\n");
-	scanf("%f", &dvp);
+    if (d > (r1 - r2) && d < (r1 + r2))
+    {
+        printf("Circles intersect at two points");
+        return;
+    }
 
-	printf("Введите плотность материала ДСП (кг/м^3)\n");
-	scanf("%f", &dsp);
-
-	printf("Введите плотность материала ДРЕВЕСИНА (кг/м^3)\n");
-	scanf("%f", &wood);
-
-	setlocale(LC_CTYPE, "rus");
-	printf("Высота шкафа (от 1.8 до 2.2 (м))");
-	scanf("%f", &h);
-	if ((h < 1.8) || (h > 2.2))
-	{
-		printf("Введена неверная высота");
-		return;
-	}
-	printf("Ширина шкафа (от 0.8 до 1.2 (м))");
-	scanf("%f", &w);
-	if ((w < 0.8) || (w > 1.2))
-	{
-		printf("Введена неверная ширина");
-		return;
-	}
-	printf("Глубина шкафа (от 0.5 до 0.9 (м))");
-	scanf("%f", &d);
-	if ((d < 0.5) || (d > 0.9))
-	{
-		printf("Введена неверная глубина");
-		return;
-	}
-
-	//Количество полок
-	n = (h / 0.4);
-
-	//Расчет массы
-	m1 = ((h - 2 * 0.015) * (w - 2 * 0.015) * tdvp * dvp);     //Задняя стенка     
-	m2 = (2 * (h - 2 * 0.015) * (d - 0.005) * tdsp * dsp);     //Боковины   
-	m3 = (2 * (w - 2 * 0.015) * (d - 0.005) * tdsp * dsp);     //Верхняя и нижняя крышки   
-	m4 = ((h - 2 * 0.015) * (w - 2 * 0.015) * twood * wood);   //Двери
-	m5 = (n * ((d - 0.005) * (w - 2 * 0.015) * tdsp));         //Полки
-
-	//Общая масса
-	printf("Масса шкафа (кг)");
-	scanf("%f", &m);
-	m = m1 + m2 + m3 + m4 + m5;
-	return;
+    if (d > (r1 - r2) && d > (r2 - r1))
+    {
+        printf("The circle is in the circle");
+        return;
+    }
 }
 
 
