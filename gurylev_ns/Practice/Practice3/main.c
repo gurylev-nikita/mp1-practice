@@ -8,7 +8,7 @@ void main()
 	int x = 1, y = 1000, n = 1, a, p = 1, type;
 	int i = 0;
 	char vvod = '=';
-	setlocale(LC_CTYPE, "rus");
+	setlocale(LC_ALL, "Russian");
 	printf("Добро пожаловать в игру УГАДАЙ ЧИСЛО\n");
 	printf("Выберите режим игры 1 или 2:\n");
 	scanf("%d", &type);
